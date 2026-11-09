@@ -16,5 +16,8 @@ RUN dnf clean all
 
 RUN sed -i -e 's/ ALL$/ NOPASSWD:ALL/' /etc/sudoers
 
+RUN mkdir /install
+COPY ./opt-install.tgz /install/
+
 RUN ln -s /run/host/var/data/aluno /data
 
